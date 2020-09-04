@@ -2,11 +2,11 @@ const _ = require('lodash')
 
 module.exports = {
     microservices: [{
-        key: 'get-scaffold-app-version',
-        path: '/api/version',
+        key: 'get-env-configuration',
+        path: '/api/config',
 
         handle: async () => {
-            return process.env.npm_package_dependencies__dlillyatx_scaffold
+            return process.env
         }
     }]
 }

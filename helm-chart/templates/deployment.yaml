@@ -46,15 +46,15 @@ spec:
             httpGet:
               path: /api/isready
               port: http
-            initialDelaySeconds: 15
-            failureThreshold: 3
+            initialDelaySeconds: 5
+            failureThreshold: 2
             periodSeconds: 20
             timeoutSeconds: 6
           readinessProbe:
             httpGet:
               path: /api/isready
               port: http
-            initialDelaySeconds: 15
+            initialDelaySeconds: 5
             failureThreshold: 2
             timeoutSeconds: 5
           resources:
