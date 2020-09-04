@@ -1,1 +1,1 @@
-require('@dlillyatx/scaffold')(`${__dirname}/services`)
+require('@dlillyatx/scaffold')(`${__dirname}`)
