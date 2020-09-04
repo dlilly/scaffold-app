@@ -15,12 +15,12 @@ image:
 service:
   type: NodePort
   port: 80
-
+  
 ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: kong
-    kubernetes.io/tls-acme: true
+    kubernetes.io/tls-acme: 'true'
     cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
     - host: scaffold-app.ctdemo.net

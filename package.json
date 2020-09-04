@@ -7,9 +7,9 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "ci-package": "docker build --tag $scaffold_docker_host/$scaffold_docker_path/$npm_package_name:$scaffold_docker_tag .",
-    "ci-push": "docker push $scaffold_docker_host/$scaffold_docker_path/$npm_package_name:$scaffold_docker_tag",
-    "ci-deploy": "helm upgrade ${npm_package_name} helm-chart --install --create-namespace --wait --force --namespace scaffold --set image.tag=${scaffold_docker_tag}",
+    "ci-package": "docker build --tag $scaffold_docker_host/$scaffold_docker_path/$npm_package_name:latest .",
+    "ci-push": "docker push $scaffold_docker_host/$scaffold_docker_path/$npm_package_name:latest",
+    "ci-deploy": "helm upgrade ${npm_package_name} helm-chart --install --recreate-pods --wait --force --namespace scaffold --set image.tag=latest",
     "ci-undeploy": "helm uninstall ${npm_package_name} --namespace scaffold"
   },
   "keywords": [
